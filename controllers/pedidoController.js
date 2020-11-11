@@ -4,7 +4,7 @@ const Pedidos = require('../models/Pedido');
 exports.mostrarPedidos = async (req,res) => {
 
     try {
-      const pedidos = await Pedidos.find({}).populate('cliente');
+      const pedidos = await Pedidos.find({}).populate('cliente').populate('cliente');
       res.json(pedidos);
 
     } catch (error) {
